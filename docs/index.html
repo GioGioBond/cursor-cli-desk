@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cursor CLI Desk</title>
+    <meta
+      name="description"
+      content="Cursor CLI Desk: desktop GUI for Cursor CLI with a local API key pool."
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0f1114;
+        --fg: #e6e8eb;
+        --mute: #8b919a;
+        --line: #2a2e35;
+        --accent: #7dd3c7;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font: 16px/1.6 ui-sans-serif, system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--fg);
+      }
+      main {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 72px 24px 96px;
+      }
+      h1 {
+        font-size: 2.2rem;
+        letter-spacing: -0.03em;
+        margin: 0 0 8px;
+      }
+      .sub {
+        color: var(--mute);
+        margin: 0 0 28px;
+      }
+      .points {
+        display: grid;
+        gap: 12px;
+        margin: 0 0 32px;
+      }
+      .points div {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 14px 16px;
+      }
+      .points b {
+        color: var(--accent);
+      }
+      a.btn {
+        display: inline-block;
+        background: var(--accent);
+        color: #10211e;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 8px;
+        padding: 10px 16px;
+        margin-right: 10px;
+      }
+      a.link {
+        color: var(--accent);
+      }
+      pre {
+        background: #16191d;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 14px 16px;
+        overflow: auto;
+      }
+      img.shot {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        margin: 12px 0 8px;
+      }
+      .shot-cap {
+        color: var(--mute);
+        font-size: 13px;
+        margin: 0 0 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Cursor CLI Desk</h1>
+      <p class="sub">Cursor CLI 桌面，带本地 API Key 池。不是 Cursor 编辑器本身。</p>
+      <div class="points">
+        <div><b>API Key 池</b> — 本地管理多把 Key，额度用尽或鉴权失败时自动切换。</div>
+        <div><b>Cursor</b> — 对接 Cursor Agent CLI、工作区和对话续写。</div>
+        <div><b>CLI</b> — 对话、模式、MCP、沙箱仍走本机 <code>agent</code> 命令。</div>
+        <div><b>Desk</b> — Electron 桌面，按工作区打开文件、对话和 Agent。</div>
+      </div>
+      <p>
+        <a
+          class="btn"
+          href="https://github.com/GioGioBond/cursor-cli-desk/releases/latest/download/CursorCLIDesk-1.0.0-win-unpacked.zip"
+          >下载免安装版（推荐）</a
+        >
+        <a class="link" href="https://github.com/GioGioBond/cursor-cli-desk/releases/latest/download/CursorCLIDesk-Setup-1.0.0.exe">安装包</a>
+        <a class="link" href="https://github.com/GioGioBond/cursor-cli-desk/releases">所有版本</a>
+      </p>
+      <p class="sub">
+        解压后运行 <code>Cursor CLI Desk.exe</code>。数据写在同一目录的 <code>.cli-desk</code>。安装包可选。不必从源码编译。
+      </p>
+      <img class="shot" src="screenshots/workspace.png" alt="已打开工作区，底部可切换 API Key" />
+      <p class="shot-cap">打开工作区后，对话、文件和 API Key 池在同一窗口里使用。</p>
+      <img class="shot" src="screenshots/explorer-empty.png" alt="启动后资源管理器为空，需先打开文件夹" />
+      <p class="shot-cap">启动后资源管理器为空。打开文件夹后，对话和文件才绑定到该工作区。</p>
+      <img class="shot" src="screenshots/key-pool.png" alt="侧栏 API Key 池" />
+      <p class="shot-cap">侧栏管理本地 Key 池：添加、导入、查看额度与轮换状态。</p>
+      <footer>MIT · 非官方社区项目，与 Cursor / Anysphere 无隶属关系。</footer>
+    </main>
+  </body>
+</html>
